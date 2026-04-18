@@ -43,6 +43,7 @@ Understand how frontend and backend interact
 Write clean, maintainable code
 Prepare for real-world developer roles
 📈 Progress
+
  Part 0 doing 
  
  Part 1 
