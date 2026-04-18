@@ -44,11 +44,17 @@ Write clean, maintainable code
 Prepare for real-world developer roles
 📈 Progress
  Part 0 doing 
+ 
  Part 1 
+ 
  Part 2
+ 
  Part 3
+ 
  Part 4
+ 
  Part 5
+ 
 💡 Key Takeaways
 APIs are not just code—they include networking, middleware, and data flow, which all affect performance
 Backend performance issues often come from architecture and scaling, not just logic
