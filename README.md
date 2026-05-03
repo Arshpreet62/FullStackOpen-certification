@@ -101,7 +101,6 @@ If you want to connect or collaborate, feel free to reach out via [GitHub](https
 
 
 ```mermaid
-graph TD;
 sequenceDiagram
     participant browser
     participant server
