@@ -26,6 +26,7 @@ This repository contains my work and exercises from the [Full Stack Open](https:
 
 ---
 
+
 ## 📂 Project Structure
 
 Each folder corresponds to a part of the course:
@@ -97,3 +98,12 @@ npm start
 ## 📬 Contact
 
 If you want to connect or collaborate, feel free to reach out via [GitHub](https://github.com/Arshpreet62).
+
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
