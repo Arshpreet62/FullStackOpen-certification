@@ -101,42 +101,45 @@ If you want to connect or collaborate, feel free to reach out via [GitHub](https
 
 
 ```mermaid
+
+
 sequenceDiagram
     participant browser
     participant server
 
-    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+    browser->>server: GET /exampleapp/notes
     activate server
     server-->>browser: HTML document
     deactivate server
 
-    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    browser->>server: GET /exampleapp/main.css
     activate server
-    server-->>browser: the css file
+    server-->>browser: CSS file
     deactivate server
 
-    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    browser->>server: GET /exampleapp/main.js
     activate server
-    server-->>browser: the JavaScript file
+    server-->>browser: JavaScript file
     deactivate server
 
-    Note right of browser: The browser starts executing the JavaScript code that fetches the JSON from the server
+    Note right of browser: Browser executes JS and fetches data
 
-    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    browser->>server: GET /exampleapp/data.json
     activate server
-    server-->>browser: [{ "content": "HTML is easy", "date": "2023-1-1" }, ... ]
+    server-->>browser: JSON notes
     deactivate server
 
-    Note right of browser: The browser executes the callback function that renders the notes
-    browser->>server: POST POST https://studies.cs.helsinki.fi/exampleapp/new_note (body { "note": "new note" })
+    Note right of browser: JS renders notes
+
+    browser->>server: POST /exampleapp/new_note body: {"note":"new note"}
     activate server
-    server-->>browser: [status code: 201 ; New note created]
+    server-->>browser: 201 Created
     deactivate server
 
-   Note right of browser: Browser receives 201 Created and may update UI or refetch notes
+    Note right of browser: UI updates or refetch
 
-browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    browser->>server: GET /exampleapp/data.json
     activate server
-    server-->>browser: [{ "content": "HTML is easy", "date": "2023-1-1" }, ... ]
+    server-->>browser: updated JSON notes
     deactivate server
 ```
