@@ -128,4 +128,12 @@ sequenceDiagram
     deactivate server
 
     Note right of browser: The browser executes the callback function that renders the notes
+ browser->>server: POST https://studies.cs.helsinki.fi/New_Note
+body {
+Note : new note
+}
+    activate server
+    server-->>browser: [status code: 201 ; New note created]
+    deactivate server
+   Note right of browser: The browser get response that the post was saved sucessfully
 ```
