@@ -107,39 +107,38 @@ sequenceDiagram
     participant browser
     participant server
 
-    browser->>server: GET /exampleapp/notes
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
     activate server
     server-->>browser: HTML document
     deactivate server
 
-    browser->>server: GET /exampleapp/main.css
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
     activate server
-    server-->>browser: CSS file
+    server-->>browser: the css file
     deactivate server
 
-    browser->>server: GET /exampleapp/main.js
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
     activate server
-    server-->>browser: JavaScript file
+    server-->>browser: the JavaScript file
     deactivate server
 
-    Note right of browser: Browser executes JS and fetches data
+    Note right of browser: The browser starts executing the JavaScript code that fetches the JSON from the server
 
-    browser->>server: GET /exampleapp/data.json
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
     activate server
-    server-->>browser: JSON notes
+    server-->>browser: [{ "content": "HTML is easy", "date": "2023-1-1" }, ... ]
     deactivate server
 
-    Note right of browser: JS renders notes
-
-    browser->>server: POST /exampleapp/new_note body: {"note":"new note"}
+    Note right of browser: The browser executes the callback function that renders the notes
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note (body { "note": "new note" })
     activate server
-    server-->>browser: 201 Created
+    server-->>browser: [status code: 201 ; New note created]
     deactivate server
 
-    Note right of browser: UI updates or refetch
+   Note right of browser: Browser receives 201 Created and may update UI or refetch notes
 
-    browser->>server: GET /exampleapp/data.json
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
     activate server
-    server-->>browser: updated JSON notes
+    server-->>browser: [{ "content": "HTML is easy", "date": "2023-1-1" }, ... ]
     deactivate server
 ```
