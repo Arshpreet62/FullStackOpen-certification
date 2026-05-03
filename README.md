@@ -132,7 +132,7 @@ sequenceDiagram
     Note right of browser: The browser executes the callback function that renders the notes
     browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note (body { "note": "new note" })
     activate server
-    server-->>browser: [status code: 201 ; New note created]
+    server-->>browser: [status code: 201 , New note created]
     deactivate server
 
    Note right of browser: Browser receives 201 Created and may update UI or refetch notes
